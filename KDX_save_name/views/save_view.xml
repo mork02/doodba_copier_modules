@@ -1,10 +1,9 @@
 <odoo>
-
-    <record id="view_my_model_form" model="ir.ui.view">
+    <record id="view_save_name_form" model="ir.ui.view">
         <field name="name">save.name.form</field>
         <field name="model">save.name</field>
         <field name="arch" type="xml">
-            <form string="Save name">
+            <form string="Save Name">
                 <sheet>
                     <group>
                         <field name="first_name"/>
@@ -19,7 +18,7 @@
         <field name="name">save.name.tree</field>
         <field name="model">save.name</field>
         <field name="arch" type="xml">
-            <tree string="Save name">
+            <tree string="Save Name">
                 <field name="first_name"/>
                 <field name="last_name"/>
             </tree>
@@ -27,9 +26,8 @@
     </record>
 
     <record id="action_save_name" model="ir.actions.act_window">
-        <field name="name">Save name</field>
+        <field name="name">Save Name</field>
         <field name="res_model">save.name</field>
         <field name="view_mode">tree,form</field>
     </record>
-
 </odoo>

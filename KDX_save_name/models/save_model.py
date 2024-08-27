@@ -1,6 +1,6 @@
 from odoo import models, fields
 
-class save_name(models.Model):
+class SaveName(models.Model):
     _name = "save.name"
     _description = "Add a name and save it"
 
