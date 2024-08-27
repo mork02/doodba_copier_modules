@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_save_name_all,access_save_name_all,model_save_name_model,base.group_user,1,1,1,1
+save_name_id,save_name,save_name_model_id,base.group_user,1,1,1,1
