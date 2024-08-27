@@ -8,8 +8,7 @@
     'website': 'https://github.com/mork02/doodba_copier_modules/tree/main/KDX_save_name',
     'depends': ['base'],
     'data': [
-        'views/save_view.xml',
-        'security/ir.model.access.csv'
+        'views/save_view.xml'
     ],
     'installable': True,
     'application': True,
