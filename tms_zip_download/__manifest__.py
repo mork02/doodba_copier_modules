@@ -1,13 +1,13 @@
 {
     'name': 'tms_zip_download',
     'version': '1.0',
-    'summary': 'Zip.',
+    'summary': 'Compromise files into a zip folder and download it.',
     'description': """
-        ZIP!
+        Compromise files into a zip folder and download it.
     """,
-    'author': 'KeDeX',
-    'website': 'none',
-    'category': 'Transport Management',
+    "author": "SIRUM GmbH",
+    "website": "https://www.sirum.de",
+    "category": "TMS",
     'depends': ['base'],
     'data': [
         'views/ir_attachment_view.xml',

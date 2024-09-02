@@ -19,7 +19,7 @@
 
         <menuitem
           id="menu_attribute_value"
-          name="ir attachment"
+          name="Attachments"
           parent="tms_base.menu_tms_main_configuration"
           sequence="1"
           action="action_ir_attachment_tree_view"
