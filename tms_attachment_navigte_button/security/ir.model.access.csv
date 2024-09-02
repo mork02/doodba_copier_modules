@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+navigate_attachment,navigate_attachment,model_navigate_attachment,base.group_system,1,1,1,1
+navigate_attachment,navigate_attachment,model_navigate_attachment,base.group_user,0,0,0,0
