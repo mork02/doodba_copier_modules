@@ -1,3 +1,4 @@
+import zipfile
 from io import BytesIO
 
 from odoo import _, models
@@ -22,6 +23,14 @@ class IrAttachment(models.Model):
 
     def _create_temp_zip(self):
         zip_buffer = BytesIO()
+        with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
+            file_contents = {
+                attachment._compute_zip_file_name(): attachment.datas
+                for attachment in self
+                if attachment.check("read")
+            }
+            for file_name, data in file_contents.items():
+                zip_file.writestr(file_name, data)
         zip_buffer.seek(0)
         return zip_buffer
 
