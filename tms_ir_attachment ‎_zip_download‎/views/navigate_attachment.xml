@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="view_ir_attachment_search_custom" model="ir.ui.view">
+            <field name="name">ir.attachment.search.custom</field>
+            <field name="model">ir.attachment</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter
+                    name="exclude_js_css_json"
+                    string="Exclude .js, .css, .json"
+                    domain="[
+                                ['name', 'not ilike', '.js'],
+                                ['name', 'not ilike', '.css'],
+                                ['name', 'not ilike', '.json']
+                            ]"
+                            />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_ir_attachment_tree_view" model="ir.actions.act_window">
+            <field name="name">Attachments</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="base.view_attachment_tree" />
+            <field name="target">current</field>
+            <field name="search_view_id" ref="view_ir_attachment_search_custom" />
+            <field name="context">{'search_default_exclude_js_css_json': 1}</field>
+        </record>
+
+        <menuitem
+      id="menu_attribute_value"
+      name="Attachments"
+      parent="tms_base.menu_tms_main_configuration"
+      sequence="1"
+      action="action_ir_attachment_tree_view"
+      groups="tms_base.tms_admin"
+    />
+    </data>
+</odoo>

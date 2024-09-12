@@ -1,8 +1,8 @@
-import zipfile
 from io import BytesIO
 
 from odoo import _, models
 from odoo.exceptions import UserError
+
 
 class IrAttachment(models.Model):
     _inherit = "ir.attachment"
@@ -22,14 +22,7 @@ class IrAttachment(models.Model):
 
     def _create_temp_zip(self):
         zip_buffer = BytesIO()
-        with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
-            for attachment in self:
-                attachment.check("read")
-                zip_file.writestr(
-                    attachment._compute_zip_file_name(),
-                    attachment.datas,  # Use 'datas' field for binary content
-                )
-            zip_buffer.seek(0)
+        zip_buffer.seek(0)
         return zip_buffer
 
     def _compute_zip_file_name(self):

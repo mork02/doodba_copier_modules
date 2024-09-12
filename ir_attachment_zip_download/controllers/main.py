@@ -1,7 +1,6 @@
-import zipfile
-from io import BytesIO
 from odoo import _, http
 from odoo.http import request
+
 
 class AttachmentZippedDownloadController(http.Controller):
     @http.route("/web/attachment/download_zip", type="http", auth="user")

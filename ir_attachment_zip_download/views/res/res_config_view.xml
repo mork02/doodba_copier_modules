@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_tms_zip_download" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.tms_zip_download</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="40" />
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='settings']" position="inside">
+                <div
+          class="app_settings_block"
+          data-string="Test"
+          string="Test"
+          data-key="tms_zip_download"
+          groups="tms_base.tms_admin"
+        >
+                    <h2>Test</h2>
+                    <div class="row mt16 o_settings_container" name="tms-test" />
+                    <field name="exclude_js_files" />
+                    <field name="exclude_css_files" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
