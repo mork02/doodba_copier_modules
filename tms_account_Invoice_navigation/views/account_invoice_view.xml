@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+
+        <record id="account_invoice_action" model="ir.actions.act_window">
+            <field name="name">Account Invoice</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="account.invoice_form" />
+            <field name="target">current</field>
+        </record>
+
+        <menuitem
+            id="menu_account_invoice"
+            name="Account Invoice"
+            parent="tms_base.menu_tms_main_configuration"
+            sequence="1"
+            action="account_invoice_action"
+            groups="tms_base.tms_admin"
+        />
+    </data>
+</odoo>

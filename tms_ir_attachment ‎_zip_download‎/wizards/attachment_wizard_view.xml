@@ -1,0 +1,29 @@
+<odoo>
+
+    <record id="view_attachment_wizard_form" model="ir.ui.view">
+        <field name="name">attachment.wizard.form</field>
+        <field name="model">attachment.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Sort by Date">
+                <group>
+                    <field name="date_from" />
+                    <field name="date_to" />
+                </group>
+                <footer>
+                    <button string="Apply" class="btn-primary" type="object" name="apply_filter" />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_attachment_wizard" model="ir.actions.act_window">
+        <field name="name">Attachment Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">attachment.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_attachment_wizard_form" />
+        <field name="target">new</field>
+    </record>
+
+</odoo>
